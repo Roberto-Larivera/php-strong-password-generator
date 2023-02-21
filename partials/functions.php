@@ -40,8 +40,11 @@ if($paramEveryone == null){
     if($paramSpecial){
         $characters .= $specialEasyInt;
     }
+    if(!$paramNumber && !$paramLetter && !$paramUppercase && !$paramSpecial){
+        $characters .= $numInt .= $abcInt .= $ABCInt .= $specialEasyInt;
+    }
 }else{
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&?';
+    $characters .= $numInt .= $abcInt .= $ABCInt .= $specialEasyInt;
 }
 
 function generate_random_string ($characters, $length = 16) {

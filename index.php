@@ -26,7 +26,7 @@ include __DIR__ . '/partials/functions.php';
                 Parameters
             </label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="parameter_everyone" id="check-everyone">
+                <input class="form-check-input" type="checkbox" name="parameter_everyone" id="check-everyone" checked>
                 <label class="form-check-label" for="check-everyone">
                     Everyone
                 </label>
@@ -57,7 +57,7 @@ include __DIR__ . '/partials/functions.php';
             </div>
         </div>
 
-        <button>
+        <button type="submit">
             Generator Password
         </button>
     </form>
