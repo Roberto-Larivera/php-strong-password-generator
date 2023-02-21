@@ -1,8 +1,9 @@
 <?php
+session_start();
+
 $statusPassword = false;
 $lengthPassword = $_GET['length_password'] ?? null;
-var_dump($lengthPassword);
-// echo '<br>';
+
 function generate_characters(){
     $numInt = '0123456789';
     $abcInt = 'abcdefghijklmnopqrstuvwxyz';
@@ -10,10 +11,14 @@ function generate_characters(){
     $specialInt = '!@#$%^&*()_+-={}[]|\:;"<>,.?/~`';
     $specialEasyInt = '!@#$%&*?';  
 }
+$_SESSION['generatedPassword'] = [
+    'password' => null,
+    'statusPassword' => false,
+];
 if($lengthPassword != null){
     function generate_random_string($length = 16) {
         // Definizione della stringa di caratteri utilizzata per generare la stringa casuale
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-={}[]|\:;"<>,.?/~`';
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*?';
         
         // Inizializzazione della stringa casuale
         $string = '';
@@ -35,7 +40,11 @@ if($lengthPassword != null){
         return $string;
     }
     //var_dump(generate_random_string($lengthPassword));
-    
     $password = generate_random_string($lengthPassword);
     $statusPassword = true;
+    $_SESSION['generatedPassword'] = [
+        'password' => $password,
+        'statusPassword' => $statusPassword,
+    ];
+    header('Location: ./partials/login.php');
 }
