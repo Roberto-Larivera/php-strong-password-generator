@@ -2,6 +2,13 @@
 $lengthPassword = $_GET['length_password'] ?? 6;
 var_dump($lengthPassword);
 echo '<br>';
+function generate_characters(){
+    $numInt = '0123456789';
+    $abcInt = 'abcdefghijklmnopqrstuvwxyz';
+    $ABCInt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $specialInt = '!@#$%^&*()_+-={}[]|\:;"<>,.?/~`';
+    $specialEasyInt = '!@#$%&*?';  
+}
 
 function generate_random_string($length = 16) {
     // Definizione della stringa di caratteri utilizzata per generare la stringa casuale
