@@ -1,4 +1,5 @@
 <?php
+
 include_once __DIR__ . '/partials/functions.php';
 ?>
 
@@ -17,17 +18,19 @@ include_once __DIR__ . '/partials/functions.php';
         <label for="length-password">
             Inserisci lunghezza Password
         </label>
-        <input type="number" name="length_password" min="6" value="6" id="length-password">
+        <input type="number" name="length_password" min="4"  id="length-password">
         <button>
             Generator Password
         </button>
     </form>
+    <?php if($statusPassword){?>
     <h2>
         Password generata
     </h2>
     <span>
-        <?php echo $password ?>
+        <?php echo $password; ?>
     </span>
+    <?php }?>
 </body>
 
 </html>
