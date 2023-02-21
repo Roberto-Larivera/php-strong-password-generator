@@ -14,23 +14,62 @@ include __DIR__ . '/partials/functions.php';
 
 <body>
     <form action="" method="GET">
-        <label for="length-password">
-            Inserisci lunghezza Password
-        </label>
-        <input type="number" name="length_password" min="4"  id="length-password" required>
+        <div>
+            <label for="length-password">
+                Inserisci lunghezza Password
+            </label>
+            <input type="number" name="length_password" min="4" id="length-password" required>
+        </div>
+
+        <div>
+            <label for="checkbox">
+                Parameters
+            </label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="parameter_everyone" id="check-everyone">
+                <label class="form-check-label" for="check-everyone">
+                    Everyone
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="parameter_number" id="check-number">
+                <label class="form-check-label" for="check-number">
+                    Numeri
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="parameter_letter" id="check-letter">
+                <label class="form-check-label" for="check-letter">
+                    Lettere
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="parameter_uppercase" id="check-uppercase">
+                <label class="form-check-label" for="check-uppercase">
+                    Uppercase
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="parameter_special" id="check-special">
+                <label class="form-check-label" for="check-special">
+                    Caratteri Speciali
+                </label>
+            </div>
+        </div>
+
         <button>
             Generator Password
         </button>
     </form>
-    
-    <?php if($_SESSION['generatedPassword']['statusPassword']){?>
-    <h2>
-        Password generata
-    </h2>
-    <span>
-        <?php echo $_SESSION['generatedPassword']['password']; ?>
-    </span>
-    <?php }?>
+
+    <?php if ($_SESSION['generatedPassword']['statusPassword']) { ?>
+        <h2>
+            Password generata
+        </h2>
+        <span>
+            <?php echo $_SESSION['generatedPassword']['password']; ?>
+        </span>
+    <?php } ?>
 </body>
 
 </html>
