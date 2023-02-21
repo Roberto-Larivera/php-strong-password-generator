@@ -76,10 +76,13 @@ include __DIR__ . '/partials/functions.php';
                             </label>
                         </div>
                     </div>
-
-                    <button type="submit" class="btn btn-success">
-                        Generator Password
-                    </button>
+                    <div class="row">
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-success">
+                                Generator Password
+                            </button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
