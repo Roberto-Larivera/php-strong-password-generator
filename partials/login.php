@@ -28,7 +28,7 @@ if (isset($_GET['return_index'])) {
         <div class="row row-cols-1 text-center mb-5">
             <div class="col mb-5">
                 <h2>
-                    Complimenti la tua password generata è:
+                    Congratulations your generated password is:
                 </h2>
             </div>
             <div class="col text-warning">
@@ -41,7 +41,7 @@ if (isset($_GET['return_index'])) {
             <div class="col-auto">
                 <form action="" method="GET">
                     <button type="submit" class="btn btn-outline-danger" name="return_index">
-                        Genera una nuova Password
+                    Generate a new Password
                     </button>
                 </form>
             </div>

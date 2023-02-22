@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Set for created password
 $numInt = '0123456789';
@@ -50,7 +49,7 @@ if($paramEveryone == null){
 
 function generatePassword ($characters, $length = 16) {
     // Definizione della stringa di caratteri utilizzata per generare la stringa casuale
-    $length = ($length < 4 ) ? 4 : $length;
+    $length = ($length < 6 ) ? 6 : $length;
     $length = ($length > 50 ) ? 50 : $length;
     // Inizializzazione della stringa casuale
     $string = '';

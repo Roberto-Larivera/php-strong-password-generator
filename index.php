@@ -1,8 +1,9 @@
 <?php
 session_start();
-
 session_unset();
 session_destroy();
+
+session_start();
 include __DIR__ . '/partials/functions.php';
 ?>
 
@@ -32,11 +33,11 @@ include __DIR__ . '/partials/functions.php';
                     <div class="row mb-5">
                         <div class="col-12 mb-3">
                             <label for="length-password" class="form-label">
-                                Inserisci lunghezza Password
+                                Enter Password length
                             </label>
                         </div>
                         <div class="col-3">
-                            <input type="number" name="length_password" min="4" max="50" id="length-password" class="form-control" required>
+                            <input type="number" name="length_password" min="6" max="50" id="length-password" class="form-control" required>
                         </div>
                     </div>
 
