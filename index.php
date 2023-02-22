@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+session_unset();
+session_destroy();
 include __DIR__ . '/partials/functions.php';
 ?>
 
@@ -32,7 +36,7 @@ include __DIR__ . '/partials/functions.php';
                             </label>
                         </div>
                         <div class="col-3">
-                            <input type="number" name="length_password" min="4" id="length-password" class="form-control" required>
+                            <input type="number" name="length_password" min="4" max="50" id="length-password" class="form-control" required>
                         </div>
                     </div>
 

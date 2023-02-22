@@ -19,13 +19,14 @@ $paramLetter = $_GET['parameter_letter'] ?? null ;
 $paramUppercase = $_GET['parameter_uppercase'] ?? null ;
 $paramSpecial = $_GET['parameter_special'] ?? null ;
 
+if(isset($lengthPassword)){
+    $lengthPassword = intval($_GET['length_password']);
+}
+
 $_SESSION['generatedPassword'] = [
     'password' => null,
     'statusPassword' => false,
 ];
-
-function generate_characters(){
-}
 
 if($paramEveryone == null){
     if($paramNumber){
@@ -47,9 +48,10 @@ if($paramEveryone == null){
     $characters .= $numInt .= $abcInt .= $ABCInt .= $specialEasyInt;
 }
 
-function generate_random_string ($characters, $length = 16) {
+function generatePassword ($characters, $length = 16) {
     // Definizione della stringa di caratteri utilizzata per generare la stringa casuale
     $length = ($length < 4 ) ? 4 : $length;
+    $length = ($length > 50 ) ? 50 : $length;
     // Inizializzazione della stringa casuale
     $string = '';
     
@@ -75,9 +77,9 @@ function generate_random_string ($characters, $length = 16) {
 
 
 
-if($lengthPassword != null){
-    //var_dump(generate_random_string($lengthPassword));
-    $password = generate_random_string($characters, $lengthPassword);
+if($lengthPassword != null && is_numeric($lengthPassword)){
+    //var_dump(generatePassword($lengthPassword));
+    $password = generatePassword($characters, $lengthPassword);
     $statusPassword = true;
     $_SESSION['generatedPassword'] = [
         'password' => $password,
