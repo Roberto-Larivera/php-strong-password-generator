@@ -85,4 +85,5 @@ if($lengthPassword != null && is_numeric($lengthPassword)){
         'statusPassword' => $statusPassword,
     ];
     header('Location: ./partials/login.php');
+    die();
 }
